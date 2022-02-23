@@ -1,0 +1,737 @@
+/*Цвета сайта*/
+:root {
+	--color-font: #DBC399;
+	--color-background: #5E5B4A;
+}
+
+@font-face {
+	font-family: 'CanisMinor';
+	src: url(/font/b52_[allfont.ru].ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+ height: 100vh;
+ width: 100vw;
+ overflow-x: hidden;
+ overflow-y: hidden;
+ background-color: var(--color-background);
+ /*background: url("/myImage/background.gif");
+ background-repeat: repeat-x;*/
+ font-family: 'CanisMinor';
+ color: var(--color-font);
+}
+
+@keyframes move-down {
+	from{transform: translate(0, -100%);}
+	to{transform: translate(0, 0%);}
+}
+
+@keyframes move-up {
+	from{transform: translate(0, 100%);}
+	to{transform: translate(0, 0%);}
+}
+
+@keyframes move-right {
+	from{transform: translate(100%, 0);}
+	to{transform: translate(0, 0);}
+}
+
+@keyframes move-left {
+	from{transform: translate(-100%, 0);}
+	to{transform: translate(0, 0);}
+}
+
+@keyframes scroll-up {
+	from{transform: translate(0, 100%);}
+	to{transform: translate(0, -100%);}
+}
+
+#site-pages {
+	height: 100vh;
+	width: 100vw;
+
+	display: none;
+	flex-direction: column;
+}
+
+#preloadPage {
+	background-color: var(--color-background);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#preloadImage {
+	display: block;
+	width: 25vw;
+	height: auto;
+}
+
+#information-about-me {
+	display: none;
+}
+
+#skills {
+	display: none;
+}
+
+#interests {
+	display: none;
+}
+
+#services {
+	display: none;
+}
+
+#resources {
+	display: none;
+}
+
+#educationAdmin {
+	display: none;
+}
+
+#coursesAdmin {
+	display: none;
+}
+
+#projects {
+	display: none;
+}
+
+#work-experience {
+	display: none;
+}
+
+#login {
+	display: none;
+}
+
+/*Управление admin.blade.php */
+
+.admin-menu {
+	height:6vh;
+	width: 90vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin:  3vh auto;
+	cursor: pointer;
+	border: 1vh var(--color-font) solid;
+	font-weight: bold;
+	text-align: center;
+}
+.admin-menu:hover {
+	transform: scale(1, 1.2);
+}
+
+
+#open-feedback {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1vw 3vh;
+	cursor: pointer;
+	border: 1px var(--color-font) solid;
+}
+#open-feedback:hover {
+	transform: scale(1, 1.2);
+}
+
+/*---------------------------*/
+
+[hidden] {
+    display: none !important;
+}
+
+#authorization {
+	width: 100%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*......................PORTAIT....................................*/
+@media (orientation: portrait) {
+  html, body {
+    font-size: 3vh;
+    background-size: 100vw 100vh;
+  }
+
+/*--------------------------menu------------------------------*/
+  #menu {
+    height: 25vh;
+		width: 100vw;
+		overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+		animation: move-down 1s 1 normal ease-out;
+  }
+
+	.place-button {
+		flex-basis: 100vw;
+		height: 6vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+  .menu {
+    width: 95%;
+		height: 90%;
+    background: url("/myImage/borderButtonRed.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+	.menu:hover {
+		transform: scale(1.05, 1.1);
+	}
+
+  h1 {
+    margin: 4vh 0 4vh 0;
+		text-align: center;
+		font-size: 150%;
+		width: 100%;
+		height: auto;
+		animation: move-right 1s 1 normal ease-out;
+  }
+
+  h2{
+    margin: 0 0 3vh 0;
+		text-align: center;
+		font-size: 130%;
+		width: 100%;
+		height: auto;
+		padding-right: 20%;
+		animation: move-left 2s 1 normal ease-out;
+  }
+
+	p {
+		margin: 0 0 2vh 0;
+	}
+
+	.site-div {
+		height: 75vh;
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow-x: hidden;
+	  overflow-y: scroll;
+		scrollbar-width: thin;
+	  scrollbar-color: var(--color-font) var(--color-background);
+	}
+
+	.site-div::-webkit-scrollbar {
+	  width: 5px;
+	}
+	.site-div::-webkit-scrollbar-thumb {
+	  background-color: var(--color-font);
+	}
+	.site-div::-webkit-scrollbar-track {
+	  background-color: var(--color-background);
+	}
+
+/*--------------------------start-page---------------------------*/
+#intro {
+	flex: 1 0 45vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.move-up-text {
+	margin: 0 0 4vh 0;
+	height: 15vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.move-up-text > div {
+	width: 100%;
+	height: auto;
+	animation: scroll-up 8s infinite normal linear;
+}
+
+.move-up-text > div > p {
+	text-align: center;
+}
+
+#diagram-skills {
+  flex-basis: 100%;
+  height: 30vh;
+	width: 100vw;
+  margin: 0;
+	overflow-x: scroll;
+  overflow-y: hidden;
+	scrollbar-width: thin;
+  scrollbar-color: var(--color-font) var(--color-background);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+	padding: 0 1vw 0 2vw;
+	box-sizing: border-box;
+	animation: move-up 3s 1 normal ease-out;
+}
+
+#diagram-skills::-webkit-scrollbar {
+  width: 5px;
+}
+#diagram-skills::-webkit-scrollbar-thumb {
+  background-color: var(--color-font);
+}
+#diagram-skills::-webkit-scrollbar-track {
+  background-color: var(--color-background);
+}
+
+.level-skill {
+  flex: 0 0 4vw;
+  display: flex;
+  flex-direction: column;
+}
+.up-indicator {
+  flex: 1 0 auto;
+}
+.indicator {
+  background: url("/myImage/indicator.png");
+  flex: 0 0 10%;
+  background-size: 100% 100%;
+}
+
+.name-skill {
+  flex: 1 0 2vw;
+	width: 6vw;
+  display: flex;
+  flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+}
+
+.name-skill p {
+  text-align: right;
+  padding: 0;
+	margin: 0;
+  writing-mode: vertical-lr;
+  flex-basis: 100%;
+	width: 6vw;
+}
+
+/*-----------------------about-me---------------------------------*/
+#about-me {
+  height: auto;
+  width: 100vw;
+  margin: 1vh 0 1vh 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+	animation: move-right 1s 1 normal ease-out;
+}
+
+.border-img {
+  background: url("/myImage/borderImg.png");
+  background-size: 100% 100%;
+  height: 25vh;
+  width: auto;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#photo-programmer {
+width: 92%;
+height: 92%;
+}
+
+#info-about-the-programmer {
+  flex: 0 0 60%;
+  margin: 0 1vw 0 1vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: 1px;
+  scrollbar-color: var(--color-font) var(--color-background);
+}
+
+#info-about-the-programmer::-webkit-scrollbar {
+  	width: 1px;
+}
+#info-about-the-programmer::-webkit-scrollbar-thumb {
+    background-color: var(--color-font);
+}
+#info-about-the-programmer::-webkit-scrollbar-track {
+    background-color: var(--color-background);
+}
+
+#info-about-the-programmer > p {
+  	text-indent: 0;
+}
+
+#education {
+  flex-basis: 100%;
+  height: auto;
+  text-align: center;
+	animation: move-left 1s 1 normal ease-out;
+}
+
+#education p {
+  text-align: center;
+}
+
+#courses {
+  flex-basis: 100%;
+  height: auto;
+  text-align: center;
+}
+
+#courses p {
+  text-align: center;
+}
+
+/* ----------------------/work_experience------------------------------*/
+.work-experience {
+	width: 100%;
+	height: auto;
+	margin: 4vh;
+	animation: move-left 1s 1 normal ease-out;
+}
+
+.work-experience > p {
+	margin: 0 5vw 0 5vw;
+	text-align: center;
+}
+/*----------------------/feedback-------------------------------------*/
+#form-feedback {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	animation: move-right 1s 1 normal ease-out;
+}
+
+#report-on-sending-message {
+  text-align: center;
+	margin: 6vh 0 6vh 0;
+}
+
+/*--------------------/completed_projects--------------------------*/
+.project {
+  height: auto;
+  width: 98vw;
+  margin: 2vh 1vw 8vh 1vw;
+  display: flex;
+  flex-direction: column;
+	animation: move-left 1s 1 normal ease-out;
+}
+
+p {
+  text-indent: 2em;
+}
+
+.border-screenshot {
+  background: url("/myImage/bigBolder.png");
+  background-size: 100% 100%;
+  height: 50vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.screenshot {
+  height: 92%;
+  max-width: 92%;
+}
+
+/*--------------------------/admin----------------------------------*/
+#main-admin {
+  height: 100vh;
+  width: 100vw;
+  margin: 1vh 1vw 1vh 1vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-font) var(--color-background);
+}
+
+#main-admin > h2 {
+  margin-top: 2vh;
+}
+
+#main-admin::-webkit-scrollbar {
+  width: 1px;
+}
+#main-admin::-webkit-scrollbar-thumb {
+    background-color: var(--color-font);
+}
+#main-admin::-webkit-scrollbar-track {
+    background-color: var(--color-background);
+}
+
+.admin-div {
+  width: 98vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom:  8vh;
+}
+
+.button-submit {
+  width: 98vw;
+  height: 6vh;
+  margin-top: 2vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--color-font);
+  border-color: var(--color-font);
+  cursor: pointer;
+  font-family: 'CanisMinor';
+	font-size: 100%;
+}
+
+.button-submit:hover {
+	transform: scale(1.00, 1.05);
+}
+
+.input-text {
+  height: 6vh;
+  width: 97vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: 'CanisMinor';
+	font-size: 100%;
+  color: var(--color-font);
+  border-color: var(--color-font);
+  margin-top: 2vh;
+  padding:  0 0 0 1vw;
+}
+
+.label-digit {
+  height: auto;
+  width: 70vw;
+  font-family: 'CanisMinor';
+  color: var(--color-font);
+  border-color: var(--color-font);
+  margin-top: 2vh;
+  padding:  0 0 0 1vw;
+}
+
+.label-text {
+  height: auto;
+  width: 98vw;
+  font-family: 'CanisMinor';
+  color: var(--color-font);
+  border-color: var(--color-font);
+  margin-top: 2vh;
+  padding:  0 0 0 1vw;
+  text-align: left;
+}
+
+.input-textarea {
+  height: 20vh;
+  width: 96vw;
+  font-family: 'CanisMinor';
+  color: var(--color-font);
+  border-color: var(--color-font);
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 2vh;
+  padding:  0 0 0 0vw;
+  text-align: left;
+	padding: 1vh 1vw 1vh 1vw;
+}
+
+.input-digit {
+  height: 6vh;
+  width: 27vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: 'CanisMinor';
+	font-size: 100%;
+  color: var(--color-font);
+  border-color: var(--color-font);
+  margin-top: 2vh;
+  text-align: right;
+}
+
+.select-short {
+  height: 6vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: 'CanisMinor';
+	font-size: 100%;
+  color: var(--color-font);
+  border-color: var(--color-font);
+  margin-right: 2vw;
+  width: 20vw;
+  padding-left: 1vh;
+  cursor: pointer;
+}
+
+form {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+form > div {
+  width: 98vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 1vh;
+}
+
+
+#site-visit-statistic {
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-font) var(--color-background);
+  background-color: rgba(0, 0, 0, 0.1);
+	display: none;
+}
+
+#site-visit-statistic::-webkit-scrollbar {
+  width: 5px;
+}
+#site-visit-statistic::-webkit-scrollbar-thumb {
+  background-color: var(--color-font);
+}
+#site-visit-statistic::-webkit-scrollbar-track {
+  background-color: var(--color-background);
+}
+
+#site-visit-statistic > table {
+  width: 100%;
+  height: 100%;
+}
+
+#message {
+  height: 25vh;
+  overflow: hidden scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-font) var(--color-background);
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid var(--color-font) 1px;
+  margin-top: 1vh;
+	display: none;
+	flex-direction: column;
+}
+
+#message::-webkit-scrollbar {
+  width: 5px;
+}
+#message::-webkit-scrollbar-thumb {
+  background-color: var(--color-font);
+}
+#message::-webkit-scrollbar-track {
+  background-color: var(--color-background);
+}
+
+#skill-variables {
+	display: none;
+}
+
+.form-block-data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 6vh;
+  width: 98vw;
+  margin: 2vh 0 0 0;
+}
+
+.form-block-data > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.form-block-data > input {
+  width: 40vw !important;
+  height: 5.7vh !important;
+  margin: 0 !important;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: 'CanisMinor';
+	font-size: 100%;
+  color: var(--color-font);
+  border-color: var(--color-font);
+}
+
+.border-photo-programmer {
+  width: 99%;
+  height: 60vh;
+  background: url("/myImage/borderImg.png");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.photo-programmer {
+  width: 92%;
+  height: 92%;
+	margin: 1vh auto;
+}
+
+.button-input {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--color-font);
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 6vh;
+  grid-template-areas: "A";
+  text-align: center;
+  height: 6vh;
+  width: 98vw;
+  border: 1px solid var(--color-font);
+  margin-top: 2vh;
+}
+
+.button-input > label {
+  height: 6vh;
+  width: 100%;
+  grid-area: A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-input > input {
+  height: 6vh;
+  width: 100%;
+  grid-area: A;
+  opacity: 0;
+  cursor: pointer;
+}
+
+}
