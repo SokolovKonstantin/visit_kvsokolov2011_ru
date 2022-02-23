@@ -106,3 +106,12 @@ Route::post('/admin/authentication','App\Http\Controllers\Authorization@authenti
 
 //Start initialization DB добавить аутентификацию
 Route::get('/InitDB', 'App\Http\Controllers\InitDB@init');
+
+Route::get('/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+
+    return "Кэш очищен.";
+});
