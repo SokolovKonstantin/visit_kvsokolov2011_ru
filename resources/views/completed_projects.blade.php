@@ -1,6 +1,8 @@
 <x-page>
 
   <x-slot name="head">
+    <title>Выполненные проекты. Соколов Константин.</title>
+    <meta name = "description" content = "Завершенные проекты Соколова Константина." >
     <!--Inserting into head-->
     <script src="/js/pageOnload.js"></script>
   </x-slot>

@@ -105,7 +105,7 @@ Route::get('/admin/authorization','App\Http\Controllers\Authorization@mainMethod
 Route::post('/admin/authentication','App\Http\Controllers\Authorization@authentication');
 
 //Start initialization DB добавить аутентификацию
-Route::get('/InitDB', 'App\Http\Controllers\InitDB@init');
+//Route::get('/InitDB', 'App\Http\Controllers\InitDB@init');
 
 Route::get('/clear', function () {
     Artisan::call('cache:clear');

@@ -1,6 +1,8 @@
 <x-page>
 
   <x-slot name="head">
+    <title>Обратная связь. Соколов Константин.</title>
+    <meta name = "description" content = "Здесь можно оставить обратную связь или приглашение на работу для программиста Соколова Константина." >
     <!--Inserting into head-->
     <script src="/js/pageOnload.js"></script>
   </x-slot>
