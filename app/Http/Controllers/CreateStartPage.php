@@ -51,7 +51,7 @@ class CreateStartPage extends Controller
 
       $this->information_for_the_main = [
         "introducingMe" => "Konstantin Sokolov, full stack web developer.",
-        "typeOfWork" => "Freelance, remote work, part-time work.",
+        "typeOfWork" => "Freelance, remote work.",
       ];
 
       $this->gettingFromDB('eng');
@@ -68,7 +68,7 @@ class CreateStartPage extends Controller
 
       $this->information_for_the_main = [
         "introducingMe" => "Соколов Константин, fullstack веб разработчик.",
-        "typeOfWork" => "Фриланс, удаленная работа, подработка",
+        "typeOfWork" => "Фриланс, удаленная работа",
       ];
 
       $this->gettingFromDB('rus');
@@ -120,5 +120,5 @@ class CreateStartPage extends Controller
               *$skill['number_of_discoveries']*100/$this->keySkillVariables['maximum_number_of_new_discoveries'];
     }
 
-    
+
 }
