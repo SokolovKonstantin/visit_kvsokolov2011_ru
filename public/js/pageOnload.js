@@ -1,4 +1,11 @@
 
+window.onpageshow = function() {
+  document.querySelector('#preloadPage').style.display = 'none';
+  sleep(250);
+  document.querySelector('#site-pages').style.display = 'flex';
+};
+
+
 window.onload = function() {
   var menuClick = new Audio('/mySound/zvuk11.ogg');
   document.querySelector('#preloadPage').style.display = 'none';
